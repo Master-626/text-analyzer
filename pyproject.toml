@@ -5,15 +5,44 @@ build-backend = "hatchling.build"
 [project]
 name = "text-analyzer"
 version = "0.1.0"
-description = "A text analysis CLI with word count, readability, and statistics."
+description = "Command-line word, character, and line counts for UTF-8 text, plus most frequent words."
 readme = "README.md"
 requires-python = ">=3.8"
 license = { text = "MIT" }
 authors = [{ name = "Xu Jiaqi", email = "jiaqixu12138@gmail.com" }]
+keywords = ["text", "cli", "word-count", "statistics"]
+classifiers = [
+    "Environment :: Console",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Text Processing",
+]
 dependencies = ["click>=8.0.0", "rich>=13.0.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "ruff>=0.6"]
 
 [project.scripts]
 textan = "text_analyzer.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/Master-626/text-analyzer"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py38"
+line-length = 88
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
