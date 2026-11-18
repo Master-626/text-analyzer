@@ -88,7 +88,7 @@ ruff format --check .
 pytest
 ```
 
-GitHub Actions runs Ruff and runs pytest on Python 3.8 through 3.14.
+GitHub Actions runs Ruff on the current Ubuntu image, pytest for Python 3.8 and 3.9 on Ubuntu 22.04, and pytest for Python 3.10 through 3.14 on the current Ubuntu image.
 
 ## License
 
